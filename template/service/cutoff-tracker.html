@@ -1,0 +1,76 @@
+{% extends 'form-base.html' %}
+{% load static %}
+
+{% block content %}
+
+     
+        <!-- Start Hero -->
+        <section class="relative table w-full py-36 lg:py-44 bg-[url('../../assets/images/job/job.jpg')] bg-no-repeat bg-center">
+            <div class="absolute inset-0 bg-black opacity-80"></div>
+            <div class="container">
+                <div class="grid grid-cols-1 pb-8 text-center mt-12">
+                    <h3 class="mb-4 md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">CutOff Tracker</h3>
+
+                    
+                </div><!--end grid-->
+            </div><!--end container-->
+
+            <div class="absolute text-center z-10 bottom-5 right-0 left-0 mx-3">
+                <ul class="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
+                   <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><a href="index.html">Home</a></li>
+                   
+                    <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">CutOff Tracker</li>
+                </ul>
+            </div>
+        </section><!--end section-->
+        <div class="relative">
+            <div class="shape overflow-hidden text-white dark:text-slate-900">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- End Hero -->
+
+        <!-- Start Section-->
+        <section class="relative md:py-24 py-16">
+            <div class="container">
+                <div class="grid lg:grid-cols-12 grid-cols-1" id="reserve-form">
+                    <div class="lg:col-start-2 lg:col-span-10">
+                        <p>{{error_message}}</p>
+                        <div class="rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900 p-6">
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="grid lg:grid-cols-12 gap-6">
+                                    
+    
+                                    
+
+                                    <div class="lg:col-span-12">
+                                        <label for="typejob" class="font-semibold">Your Desired Course:</label>
+                                        <select id="course" name='course_id' class="form-input mt-3">
+                                            <option value="---------" selected>---------</option>
+                                            {% for department in department %}
+                                            <option value="{{department.id}}">{{department.department }}</option>
+                                            {% endfor %}
+                                            
+                                            
+                                        </select>
+                                    </div>
+
+                                    
+
+                                   
+                                </div>
+                                <button type="submit" id="submit" name="send" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-4">Check Previous Years CutOff</button>
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                </div><!--end grid-->
+            </div><!--end container-->
+
+            
+        </section><!--end section-->
+        <!-- End Section-->
+{% endblock content %}
+     

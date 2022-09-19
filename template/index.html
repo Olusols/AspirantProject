@@ -1,0 +1,203 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+      <!-- Start Hero -->
+      <section class="relative table w-full py-36 lg:py-44">
+        <div class="container">
+            <div class="grid md:grid-cols-12 grid-cols-1 items-center mt-10 gap-[30px]">
+                <div class="md:col-span-7">
+                    <div class="md:mr-6">
+                        <h4 class="font-semibold lg:leading-normal leading-normal text-4xl lg:text-5xl mb-5 text-black dark:text-white">Gather Enough <span class="text-indigo-600">Momentum</span> To Overcome Admission Resistance</h4>
+                        <p class="text-slate-400 text-lg max-w-xl">We are here to help you find the best answers to your questions and get consistent, real-time mentorship about admission process.</p>
+                    
+                        <div class="mt-6">
+                            <a href="https://wa.me/2348154764285" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mr-2 mt-2"><i class="uil uil-envelope"></i> Get In Touch</a>
+                           
+                        </div>
+                    </div>
+                </div><!--end col-->
+
+                <div class="md:col-span-5">
+                    <img src={% static "images/momentum.svg" %} alt="">
+                </div><!--end col-->
+            </div><!--end grid-->
+        </div><!--end container-->
+    </section><!--end section-->
+    <!-- End Hero -->
+
+    
+
+    
+    {% if ads %}
+    <!-- FEATURES START -->
+    <section class="relative md:py-24 py-16">
+        <div class="container">
+            <div class="flex justify-center">
+                <div class="features-absolute lg:w-10/12 bg-white dark:bg-slate-900 shadow dark:shadow-gray-800 rounded-md p-6">
+                    
+                        <img src="assets/images/blog/06.jpg" class="" style="width: 870px; height: 300px;" alt="">
+                    
+                </div>
+            </div>
+           
+        </div><!--end container-->
+
+        
+
+    </section><!--end section-->
+    <!-- End -->
+    {% endif %}
+
+    <!-- Start Section-->
+    <section class="relative md:py-24 py-16">
+        <div class="container">
+            <div class="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
+                <div class="lg:col-span-8 md:col-span-6">
+                    <div class="grid lg:grid-cols-2 grid-cols-1 gap-[30px]">
+                        {% for service in services %}
+                        <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
+                            <img src={{service.image.url}} alt="">
+    
+                            <div class="content p-6">
+                                <a href={% url service.url %} class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">{{service.name}}</a>
+                                <p class="text-slate-400 mt-3">{{service.text}}</p>
+                                
+                                
+                            </div>
+                        </div><!--blog end-->
+                        {% endfor %}
+    
+                        
+
+                        <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden">
+                            <img src={% static "images/ask_question.jpg" %} alt="">
+    
+                            <div class="content p-6">
+                                <a href="https://wa.me/2348154764285" class="title h5 text-lg font-medium hover:text-indigo-600 duration-500 ease-in-out">Ask Questions</a>
+                                <p class="text-slate-400 mt-3">Everything starts to make sense when you speak up. Ask questions and get answers from real people.
+                                    Develop ideas about the admission process and receive encouragements from those that have gone
+ahead of you.
+                                </p>
+                                
+                                
+                            </div>
+                        </div><!--blog end-->
+    
+                        
+                    </div><!--end grid-->
+
+                    <p class="text-slate-400 italic border-x-4 border-indigo-600 rounded-tl-xl rounded-br-xl mt-3 p-3">" Success is the outcome of the sum of actions you put in day in and day out. Keep pushing. "</p>
+                </div>
+
+                <div class="lg:col-span-4 md:col-span-6">
+                    <div class="sticky top-20">
+                        <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center">Educator</h5>
+                        <div class="text-center mt-8">
+                            
+                            <img src={% static "images/Olusols.jpg" %} class="h-24 w-24 mx-auto rounded-full shadow mb-4" alt="">
+
+                            <a href="" class="text-lg font-semibold hover:text-indigo-600 transition-all duration-500 ease-in-out">Olusola Somuyiwa</a>
+                            <p class="text-slate-400">3rd Year Medical Student</p>
+                        </div>
+
+                        <h5 class="text-lg font-semibold bg-gray-50 dark:bg-slate-800 shadow dark:shadow-gray-800 rounded-md p-2 text-center mt-8">Facts</h5>
+                        <div class="flex items-center mt-8">
+                            <p class="text-slate-400 italic border-x-4 border-indigo-600 rounded-tl-xl rounded-br-xl mt-3 p-3">" Only 1 out of 13 aspirants gain admission into University of Ibadan every year. "</p>
+
+                            
+                        </div>
+
+                        <div class="flex items-center mt-8">
+                            <p class="text-slate-400 italic border-x-4 border-indigo-600 rounded-tl-xl rounded-br-xl mt-3 p-3">" Just 37% of University of Ibadan Freshers said they were given their desired course. Others had to change to another course. "</p>
+
+                            
+                        </div>
+
+                        
+
+                        
+                        
+                        
+
+                        
+                    </div>
+                </div>
+            </div><!--end grid-->
+        </div><!--end container-->
+        <div class="container md:mt-24 mt-16" id="faq">
+            <div class="grid grid-cols-1 pb-8 text-center">
+                <h3 class="mb-4 md:text-3xl md:leading-normal text-2xl leading-normal font-semibold">Frequently Asked Questions</h3>
+
+                <p class="text-slate-400 max-w-xl mx-auto">We want you to focus on your exam preparation. We've provided a list of questions other aspirants are asking or you may want to ask. Contact us if we're not able to answer what you have in mind.</p>
+            </div><!--end grid-->
+
+            <div class="md:flex justify-center">
+                <div class="lg:w-2/3 md:w-full">
+                    <div id="accordion-collapse" data-accordion="collapse" class="mt-6">
+                        <div class="relative shadow dark:shadow-gray-800 rounded-md overflow-hidden">
+                            <h2 class="text-base font-semibold bg-white dark:bg-slate-900" id="accordion-collapse-heading-1">
+                                <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left" data-accordion-target="#accordion-collapse-body-1" aria-expanded="true" aria-controls="accordion-collapse-body-1">
+                                    <span>Can I enter University of Ibadan without JAMB?</span>
+                                    <svg data-accordion-icon class="w-4 h-4 rotate-180 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="accordion-collapse-body-1" class="hidden bg-white dark:bg-slate-900" aria-labelledby="accordion-collapse-heading-1">
+                                <div class="p-5">
+                                    <p class="text-slate-400 dark:text-gray-400">Yes, you can write JUPEB.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="relative shadow dark:shadow-gray-800 rounded-md overflow-hidden mt-4">
+                            <h2 class="text-base font-semibold bg-white dark:bg-slate-900" id="accordion-collapse-heading-2">
+                                <button type="button" class="flex justify-between items-center p-5 w-full font-medium text-left" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+                                    <span>Does University of Ibadan accept UTME Score less than 200?</span>
+                                    <svg data-accordion-icon class="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+                                    </svg>
+                                </button>
+                            </h2>
+                            <div id="accordion-collapse-body-2" class="hidden bg-white dark:bg-slate-900" aria-labelledby="accordion-collapse-heading-2">
+                                <div class="p-5">
+                                    <p class="text-slate-400 dark:text-gray-400">No. University of Ibadan does not accept UTME Score less than 200.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </div><!--end container-->
+
+
+        <div class="container md:mt-24 mt-16">
+            <div class="grid md:grid-cols-12 grid-cols-1 items-center">
+                <div class="lg:col-span-4 md:col-span-6">
+                    <img src={% static "images/envelope.svg" %} class="mx-auto d-block" alt="">
+                </div>
+                <div class="lg:col-span-8 text-center">
+                    <h3 class="md:text-3xl text-2xl md:leading-normal leading-normal font-semibold mb-6">Join Our Mentorship Class</h3>
+
+                    <p class="text-slate-400 max-w-xl mx-auto">You have always wanted to gain admission into University of Ibadan. But admission is difficult! Getting consistent and real-time mentorship shouldn't be. Right access to information and correct preparation can get you there. Get in touch with Olusola to add you to the mentorship class. It is your time to make it happen.</p>
+
+                    <div class="mt-6">
+                        <a href="https://wa.me/2348154764285" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md">Get In Touch</a>
+                    </div>
+                </div>
+
+                
+            </div><!--end gird-->
+        </div><!--end container-->
+
+    
+
+        
+    </section><!--end section-->
+    <!-- End -->
+
+{% endblock content %}

@@ -1,0 +1,231 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" class="light scroll-smooth" dir="ltr">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Techwind - Tailwind CSS Multipurpose Landing Page Template</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta content="Tailwind CSS Saas & Software Landing Page Template" name="description" />
+        <meta name="author" content="Shreethemes" />
+        <meta name="website" content="https://shreethemes.in" />
+        <meta name="email" content="support@shreethemes.in" />
+        <meta name="version" content="1.2.0" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico" />
+
+        <!-- Css -->
+        <!-- Main Css -->
+        <link href={% static "libs/@iconscout/unicons/css/line.css" %} type="text/css" rel="stylesheet" />
+        <link rel="stylesheet" href={% static "css/icons.css" %} />
+        <link rel="stylesheet" href={% static "css/tailwind.css" %} />
+
+    </head>
+    
+    <body class="font-nunito text-base text-black dark:text-white dark:bg-slate-900">
+
+        <!-- Loader Start -->
+        <!-- <div id="preloader">
+            <div id="status">
+                <div class="spinner">
+                    <div class="double-bounce1"></div>
+                    <div class="double-bounce2"></div>
+                </div>
+            </div>
+        </div> -->
+        <!-- Loader End -->
+        
+        
+
+        <!-- Start Hero -->
+        <section class="relative table w-full py-36 lg:py-44 bg-[url('../../static/images/job.jpg')] bg-no-repeat bg-center" style="background-image: url('/static/images/job.jpg')">
+            <div class="absolute inset-0 bg-black opacity-80"></div>
+            <div class="container">
+                <div class="grid grid-cols-1 pb-8 text-center mt-12">
+                    <h3 class="mb-4 md:text-4xl text-3xl md:leading-normal leading-normal font-medium text-white">Let's Know You</h3>
+
+                    
+                </div><!--end grid-->
+            </div><!--end container-->
+
+            <div class="absolute text-center z-10 bottom-5 right-0 left-0 mx-3">
+                <ul class="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
+                   <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><a href="index.html">Home</a></li>
+                   
+                    <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">Let's Know You</li>
+                </ul>
+            </div>
+        </section><!--end section-->
+        <div class="relative">
+            <div class="shape overflow-hidden text-white dark:text-slate-900">
+                <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+                </svg>
+            </div>
+        </div>
+        <!-- End Hero -->
+
+        <!-- Start Section-->
+        <section class="relative md:py-24 py-16">
+            <div class="container">
+                <div class="grid lg:grid-cols-12 grid-cols-1" id="reserve-form">
+                    <div class="lg:col-start-2 lg:col-span-10">
+                        <div class="rounded-md shadow dark:shadow-gray-800 bg-white dark:bg-slate-900 p-6">
+                            <p>{{error_message}}</p>
+                            <form method="post">
+                                {% csrf_token %}
+                                <div class="grid lg:grid-cols-12 gap-6">
+                                    <div class="lg:col-span-12">
+                                        <div class="text-left">
+                                            <label for="name" class="font-semibold">Your First Name:</label>
+                                            <input name="first_name" id="name" type="text" class="form-input mt-3" placeholder="Your First Name :">
+                                        </div>
+                                    </div>
+
+                                    <div class="lg:col-span-12">
+                                        <div class="text-left">
+                                            <label for="name" class="font-semibold">Your Last Name:</label>
+                                            <input name="last_name" id="name" type="text" class="form-input mt-3" placeholder="Your Last Name :">
+                                        </div>
+                                    </div>
+    
+                                    
+
+                                    <div class="lg:col-span-12">
+                                        <label for="typejob" class="font-semibold">Your Desired Course:</label>
+                                        <select id="typejob" class="form-input mt-3" name="course">
+                                            <option value="---------" selected>---------</option>
+                                            {% for department in department %}
+                                            <option value="{{department.department}}">{{department.department}}</option>
+                                            {% endfor %}
+                                            
+                                            
+                                        </select>
+                                    </div>
+
+                                    <div class="lg:col-span-12">
+                                        <label for="typejob" class="font-semibold">Your State of Residence:</label>
+                                        <select id="typejob" class="form-input mt-3" name="state">
+                                            <option value="---------" selected>---------</option>
+                                            {% for state in state %}
+                                            <option value="{{state.state}}">{{state.state}}</option>
+                                            {% endfor %}
+                                            
+                                            
+                                        </select>
+                                    </div>
+
+                                    <div class="lg:col-span-12">
+                                        <label for="typejob" class="font-semibold">Are you attending a tutorial? :</label>
+                                        <select id="typejob" class="form-input mt-3" name="tutorial">
+                                            <option value="---------" selected>---------</option>
+                                            <option value="False">No</option>
+                                            <option value="True">Yes</option>
+                                            
+                                            
+                                        </select>
+                                    </div>
+
+                                    <div class="lg:col-span-12">
+                                        <label for="typejob" class="font-semibold">Number of UTME Attempts:</label>
+                                        <select id="typejob" class="form-input mt-3" name="utme_attempts">
+                                            <option  selected>------------</option>
+                                            <option>1</option>
+                                            <option>2</option>
+                                            <option>3</option>
+                                            <option>4 or More</option>
+                                            
+                                        </select>
+                                    </div>
+
+                                    <div class="lg:col-span-12">
+                                        <div class="text-left">
+                                            <label for="name" class="font-semibold">Your WhatsApp Number:</label>
+                                            <input name="whatsapp" id="name" type="number" class="form-input mt-3" placeholder="08102223334 :">
+                                        </div>
+                                    </div>
+
+                                    <div class="lg:col-span-12">
+                                        <label for="typejob" class="font-semibold">How did you know about us? :</label>
+                                        <select id="typejob" class="form-input mt-3" name="know_about_us">
+                                            <option value="---------" selected>---------</option>
+                                            <option>Friend and Family</option>
+                                            <option>Facebook</option>
+                                            
+                                            
+                                        </select>
+                                    </div>
+
+                                   
+                                </div>
+                                <button type="submit" id="submit" name="send" class="btn bg-indigo-600 hover:bg-indigo-700 border-indigo-600 hover:border-indigo-700 text-white rounded-md mt-4">Submit</button>
+                            </form><!--end form-->
+                        </div>
+                    </div>
+                </div><!--end grid-->
+            </div><!--end container-->
+
+            
+        </section><!--end section-->
+        <!-- End Section-->
+
+        <!-- Footer Start -->
+        <footer class="footer bg-dark-footer relative text-gray-200 dark:text-gray-200">
+            <div class="container text-center">
+                <div class="grid grid-cols-1">
+                    <div class="py-[30px] px-0">
+                        <div class="grid md:grid-cols-2 items-center">
+                            <div class="md:text-left text-center">
+                                <a href="#" class="text-[22px] focus:outline-none">
+                                    <img src="assets/images/logo-light.png" class="mx-auto md:mr-auto md:ml-0" alt="">
+                                </a>
+                            </div>
+    
+                            <ul class="list-none footer-list md:text-right text-center mt-6 md:mt-0">
+                                <li class="inline"><a href="page-job-grid.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out">Jobs</a></li>
+                                <li class="inline mt-[10px]"><a href="page-job-companies.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out ml-2">Companies</a></li>
+                                <li class="inline mt-[10px]"><a href="helpcenter-faqs.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out ml-2">FAQs</a></li>
+                                <li class="inline mt-[10px]"><a href="contact-one.html" class="text-gray-300 hover:text-gray-400 duration-500 ease-in-out ml-2">Contact</a></li>
+                            </ul><!--end icon-->
+                        </div><!--end grid-->
+                    </div>
+                </div>
+            </div><!--end container-->
+
+            <div class="py-[30px] px-0 border-t border-slate-800">
+                <div class="container text-center">
+                    <div class="grid grid-cols-1">
+                        <div class="text-center">
+                            <p class="mb-0">© <script>document.write(new Date().getFullYear())</script> Techwind. Design with <i class="mdi mdi-heart text-red-600"></i> by <a href="https://shreethemes.in/" target="_blank" class="text-reset">Shreethemes</a>.</p>
+                        </div>
+                    </div><!--end grid-->
+                </div><!--end container-->
+            </div>
+        </footer><!--end footer-->
+        <!-- Footer End -->
+
+        <!-- Back to top -->
+        <a href="#" onclick="topFunction()" id="back-to-top" class="back-to-top fixed hidden text-lg rounded-full z-10 bottom-5 right-5 h-9 w-9 text-center bg-indigo-600 text-white leading-9"><i class="uil uil-arrow-up"></i></a>
+        <!-- Back to top -->
+
+        <!-- Switcher -->
+        <div class="fixed top-1/4 -right-1 z-3">
+            <span class="relative inline-block rotate-90">
+                <input type="checkbox" class="checkbox opacity-0 absolute" id="chk" />
+                <label class="label bg-slate-900 dark:bg-white shadow dark:shadow-gray-800 cursor-pointer rounded-full flex justify-between items-center p-1 w-14 h-8" for="chk">
+                    <i class="uil uil-moon text-[20px] text-yellow-500"></i>
+                    <i class="uil uil-sun text-[20px] text-yellow-500"></i>
+                    <span class="ball bg-white dark:bg-slate-900 rounded-full absolute top-[2px] left-[2px] w-7 h-7"></span>
+                </label>
+            </span>
+        </div>
+        <!-- Switcher -->
+
+        <!-- JAVASCRIPTS -->
+        <script src={% static "libs/feather-icons/feather.min.js" %}></script>
+        <script src={% static "js/plugins.init.js" %}></script>
+        <script src={% static "js/app.js" %}></script>
+        <!-- JAVASCRIPTS -->
+    </body>
+</html>
