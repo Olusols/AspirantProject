@@ -9,6 +9,9 @@ class Data(models.Model):
     year_of_admission = models.IntegerField()
     number_of_attempts = models.IntegerField()
     
+    def __str__(self):
+        return f'{self.department} - {self.utme}'
+    
 class AspirantData(models.Model):
     
     department = models.CharField(max_length=40)

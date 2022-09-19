@@ -3,7 +3,7 @@ DEPARTMENT = [
 
     # FACULTY OF ARTS
     ('Faculty of Arts', (
-        ('Anthroplogy', 'Anthroplogy'),
+        ('Anthropology', 'Anthropology'),
         ('Arabic Language and Literature', 'Arabic Language and Literature'),
         ('Archaeology', 'Archaeology'),
         ('Classics', 'Classics'),
