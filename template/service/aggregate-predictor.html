@@ -7,7 +7,7 @@
         
 
         <!-- Start Hero -->
-        <section class="relative table w-full py-36 lg:py-44 bg-[url('../../assets/images/job/job.jpg')] bg-no-repeat bg-center" style="background-image: url('/static/images/aggregate-predictor.png')">
+        <section class="relative table w-full py-36 lg:py-44 bg-[url('../../static/images/job.jpg')] bg-no-repeat bg-center"  style="background-image: url('/static/images/aggregate-predictor.png')">
             <div class="absolute inset-0 bg-black opacity-80"></div>
             <div class="container">
                 <div class="grid grid-cols-1 pb-8 text-center mt-12">
@@ -55,11 +55,11 @@
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">Your Desired Course:</label>
-                                        <select id="typejob" class="form-input mt-3" name="department">
+                                        <select id="typejob" class="form-input mt-3" name="course_id">
                                             <option value="---------" selected>---------</option>
 
                                             {% for department in department %}
-                                            <option value="{{department.department}}">{{department.department}}</option>
+                                            <option value="{{department.id}}">{{department.department}}</option>
                                             {% endfor %}
                                             
                                             

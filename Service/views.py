@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from Company.company import get_quote, get_service, get_department
+from Company.company import get_quote, get_service, get_department, get_faq, get_fact
 from .models import Department
 from django.contrib.auth.decorators import login_required
 
@@ -10,7 +10,8 @@ from django.contrib.auth.decorators import login_required
 def aggregate_predictor(request):
     if request.method == 'POST':
         utme = int(request.POST.get('utme'))
-        department = request.POST.get('department')
+        course_id = request.POST.get('course_id')
+        department = Department.objects.get(id=course_id)
         attempts = int(request.POST.get('attempts'))
         
        
@@ -35,9 +36,12 @@ def aggregate_predictor(request):
         
         
         context = {
-            'aggregate': aggregate,
+            'aggregate': round(aggregate, 2),
             'department':department,
             'quote': get_quote(),
+            'services': get_service(),
+            'faq': get_faq(),
+            'fact': get_fact(),
             
         }
         
@@ -103,6 +107,9 @@ def chance_calculator(request):
             'services': get_service(),
             'quote': get_quote(),
             
+            'faq': get_faq(),
+            'fact': get_fact(),
+            
             
             }
         
@@ -145,8 +152,9 @@ def cutoff_tracker(request):
             'cutoff': cutoff,
             'department': department,
             'quote': get_quote(),
-            
-            'service': get_service(),
+            'services': get_service(),
+            'faq': get_faq(),
+            'fact': get_fact(),
             }
 
         return render(request, 'service/cutoff-tracker-result.html', context)
@@ -179,8 +187,11 @@ def subject_checker(request):
             'department': dep,
             'subject': dep.get_subject_combo_list,
             'is_verified' : dep.if_subject_verified,
+            
             'quote': get_quote(),
             'services': get_service(),
+            'faq': get_faq(),
+            'fact': get_fact(),
             
                        
         }

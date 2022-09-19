@@ -37,3 +37,14 @@ def get_service():
     from Service.models import Service
     service = Service.objects.order_by('number')
     return service
+
+def get_faq():
+    from .models import FAQ
+    faq = FAQ.objects.all()[:7]
+    return faq
+
+def get_fact():
+    from .models import Fact
+    fact = Fact.objects.all()[:3]
+    return fact
+

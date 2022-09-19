@@ -20,3 +20,18 @@ class Quote(models.Model):
         
     def __str__(self):
         return self.author
+    
+class FAQ(models.Model):
+    
+    
+    question = models.CharField(max_length=255)
+    answer = models.CharField(max_length=255)
+    
+    def __str__(self):
+        return self.question
+    
+class Fact(models.Model):
+    fact = models.TextField()
+    
+    def __str__(self):
+        return self.fact
