@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="flex justify-center">
                     <div class="max-w-[400px] w-full m-auto p-6 bg-white dark:bg-slate-900 shadow-md dark:shadow-gray-800 rounded-md">
-                        <a href="index.html"><img src="assets/images/logo-icon-64.png" class="mx-auto" alt=""></a>
+                        <a href={% url "index" %}><img src="assets/images/logo-icon-64.png" class="mx-auto" alt=""></a>
                         <h5 class="my-6 text-xl font-semibold">Signup</h5>
                         <p>{{error_message}}</p>
                         <form  class="text-left" method="post">
@@ -43,7 +43,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <span class="text-slate-400 me-2">Already have an account ? </span> <a href="auth-login.html" class="text-black dark:text-white font-bold">Sign in</a>
+                                    <span class="text-slate-400 me-2">Already have an account ? </span> <a href={% url "login" %} class="text-black dark:text-white font-bold">Sign in</a>
                                 </div>
                             </div>
                         </form>
