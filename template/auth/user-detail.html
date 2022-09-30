@@ -51,7 +51,7 @@
 
             <div class="absolute text-center z-10 bottom-5 right-0 left-0 mx-3">
                 <ul class="breadcrumb tracking-[0.5px] breadcrumb-light mb-0 inline-block">
-                   <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><a href="index.html">Home</a></li>
+                   <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white/50 hover:text-white"><a href={% url "index" %}>Home</a></li>
                    
                     <li class="inline breadcrumb-item uppercase text-[13px] font-bold duration-500 ease-in-out text-white" aria-current="page">Let's Know You</li>
                 </ul>
@@ -79,14 +79,14 @@
                                     <div class="lg:col-span-12">
                                         <div class="text-left">
                                             <label for="name" class="font-semibold">Your First Name:</label>
-                                            <input name="first_name" id="name" type="text" class="form-input mt-3" placeholder="Your First Name :">
+                                            <input name="first_name" id="name" type="text" class="form-input mt-3" placeholder="Your First Name :" required>
                                         </div>
                                     </div>
 
                                     <div class="lg:col-span-12">
                                         <div class="text-left">
                                             <label for="name" class="font-semibold">Your Last Name:</label>
-                                            <input name="last_name" id="name" type="text" class="form-input mt-3" placeholder="Your Last Name :">
+                                            <input name="last_name" id="name" type="text" class="form-input mt-3" placeholder="Your Last Name :" required>
                                         </div>
                                     </div>
     
@@ -94,7 +94,7 @@
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">Your Desired Course:</label>
-                                        <select id="typejob" class="form-input mt-3" name="course">
+                                        <select id="typejob" class="form-input mt-3" name="course" required>
                                             <option value="---------" selected>---------</option>
                                             {% for department in department %}
                                             <option value="{{department.department}}">{{department.department}}</option>
@@ -106,7 +106,7 @@
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">Your State of Residence:</label>
-                                        <select id="typejob" class="form-input mt-3" name="state">
+                                        <select id="typejob" class="form-input mt-3" name="state" required>
                                             <option value="---------" selected>---------</option>
                                             {% for state in state %}
                                             <option value="{{state.state}}">{{state.state}}</option>
@@ -118,7 +118,7 @@
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">Are you attending a tutorial? :</label>
-                                        <select id="typejob" class="form-input mt-3" name="tutorial">
+                                        <select id="typejob" class="form-input mt-3" name="tutorial" required>
                                             <option value="---------" selected>---------</option>
                                             <option value="False">No</option>
                                             <option value="True">Yes</option>
@@ -129,7 +129,7 @@
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">Number of UTME Attempts:</label>
-                                        <select id="typejob" class="form-input mt-3" name="utme_attempts">
+                                        <select id="typejob" class="form-input mt-3" name="utme_attempts" required>
                                             <option  selected>------------</option>
                                             <option>1</option>
                                             <option>2</option>
@@ -142,13 +142,13 @@
                                     <div class="lg:col-span-12">
                                         <div class="text-left">
                                             <label for="name" class="font-semibold">Your WhatsApp Number:</label>
-                                            <input name="whatsapp" id="name" type="number" class="form-input mt-3" placeholder="08102223334 :">
+                                            <input name="whatsapp" id="name" type="number" class="form-input mt-3" placeholder="08102223334 :" required>
                                         </div>
                                     </div>
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">How did you know about us? :</label>
-                                        <select id="typejob" class="form-input mt-3" name="know_about_us">
+                                        <select id="typejob" class="form-input mt-3" name="know_about_us" required>
                                             <option value="---------" selected>---------</option>
                                             <option>Friend and Family</option>
                                             <option>Facebook</option>

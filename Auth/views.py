@@ -79,7 +79,6 @@ def user_detail(request):
         know_about_us = request.POST.get('know_about_us')
         state = request.POST.get('state')
         
-        print(first_name, last_name, course, utme_attempts, whatsapp, tutorial, know_about_us, state)
         
         # first_name, last_name ==> save to user
         from django.contrib.auth.models import User

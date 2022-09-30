@@ -73,6 +73,15 @@ def chance_calculator(request):
         #let's query the department from the database
         
         try:   
+           from .data import PredictChanceData
+           
+           chance = predict_chance(utme, department)
+           predict_chance_data = PredictChanceData(
+               utme_score = utme,
+               chance = chance,
+               department = department
+           )
+           predict_chance_data.save()
            from .prediction import predict_chance, return_status
            department = Department.objects.get(id=course_id)
            chance = predict_chance(utme, course_id)
@@ -97,7 +106,7 @@ def chance_calculator(request):
             }
             return render(request, 'service/chance-calculator.html', context)
         
-        result_content = 'I just used the chnace caculator to predict my chnace of gaining admission into University of Ibadan. It was really awesome'
+        result_content = 'I just used the chance caculator to predict my chnace of gaining admission into University of Ibadan. It was really awesome'
         
         context = {
             'chance': chance,
