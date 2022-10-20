@@ -64,6 +64,10 @@ def chance_calculator(request):
     if request.method == 'POST':
         utme = int(request.POST.get('utme'))
         course_id = request.POST.get('course_id')
+
+
+
+        
         
         
 
@@ -72,32 +76,39 @@ def chance_calculator(request):
 
         #let's query the department from the database
         
-        try:   
-           from .data import PredictChanceData
-           
-           chance = predict_chance(utme, department)
-           predict_chance_data = PredictChanceData(
+        try:  
+
+            from .data import PredictChanceData
+            from .prediction import predict_chance, return_status
+            department = Department.objects.get(id=course_id)
+        
+            chance = predict_chance(utme, course_id)
+            predict_chance_data = PredictChanceData(
                utme_score = utme,
                chance = chance,
                department = department
-           )
-           predict_chance_data.save()
-           from .prediction import predict_chance, return_status
-           department = Department.objects.get(id=course_id)
-           chance = predict_chance(utme, course_id)
-           status = return_status(chance)
+            )
+            predict_chance_data.save()
+        
+            department = Department.objects.get(id=course_id)
+            chance = predict_chance(utme, course_id)
+            status = return_status(chance)
                
-           get_similar_course_chance = department.get_similar_course
-           dic_of_similar_course = {}
+            get_similar_course_chance = department.get_similar_course
+            dic_of_similar_course = {}
            
-           for course in get_similar_course_chance:
+            for course in get_similar_course_chance:
                similar_chance = predict_chance(utme, course.id)
                dic_of_similar_course[course] = similar_chance
-           similar_course = dic_of_similar_course
+            similar_course = dic_of_similar_course 
+
+
+   
        
            
            
 
+        
         except Exception as error:
             
             context = {
@@ -106,7 +117,7 @@ def chance_calculator(request):
             }
             return render(request, 'service/chance-calculator.html', context)
         
-        result_content = 'I just used the chance caculator to predict my chnace of gaining admission into University of Ibadan. It was really awesome'
+        result_content = 'I just used the chance caculator to predict my chance of gaining admission into University of Ibadan. It was really awesome'
         
         context = {
             'chance': chance,

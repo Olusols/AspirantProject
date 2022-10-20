@@ -45,7 +45,7 @@
                                     <div class="lg:col-span-12">
                                         <div class="text-left">
                                             <label for="name" class="font-semibold">Your UTME Score:</label>
-                                            <input name="utme" id="utme" type="number" class="form-input mt-3" placeholder="Your UTME Score: ">
+                                            <input name="utme" id="utme" type="number" class="form-input mt-3" placeholder="Your UTME Score: " required>
                                         </div>
                                     </div>
     
@@ -53,7 +53,7 @@
 
                                     <div class="lg:col-span-12">
                                         <label for="typejob" class="font-semibold">Your Desired Course:</label>
-                                        <select id="course" name='course_id' class="form-input mt-3">
+                                        <select id="course" name='course_id' class="form-input mt-3" required>
                                             <option value="---------" selected>---------</option>
                                             {% for department in department %}
                                             <option value="{{department.id}}">{{department.department}}</option>
