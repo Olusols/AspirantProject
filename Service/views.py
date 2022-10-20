@@ -75,17 +75,19 @@ def chance_calculator(request):
         try:   
            from .data import PredictChanceData
            
-           chance = predict_chance(utme, department)
+           
+           from .prediction import predict_chance, return_status
+           department = Department.objects.get(id=course_id)
+           chance = predict_chance(utme, course_id)
+           status = return_status(chance)
+        
+           
            predict_chance_data = PredictChanceData(
                utme_score = utme,
                chance = chance,
                department = department
            )
            predict_chance_data.save()
-           from .prediction import predict_chance, return_status
-           department = Department.objects.get(id=course_id)
-           chance = predict_chance(utme, course_id)
-           status = return_status(chance)
                
            get_similar_course_chance = department.get_similar_course
            dic_of_similar_course = {}
