@@ -97,6 +97,7 @@ def chance_calculator(request):
             department = Department.objects.get(id=course_id)
             chance = predict_chance(utme, course_id)
             status = return_status(chance)
+
                
             get_similar_course_chance = department.get_similar_course
             dic_of_similar_course = {}
