@@ -18,6 +18,9 @@ def aggregate_predictor(request):
         
 
         from .prediction import predict_aggregate
+        
+
+        
         try:
        
            aggregate = predict_aggregate(utme, attempts, department)
@@ -28,7 +31,8 @@ def aggregate_predictor(request):
                 'department': get_department(),
             }
             return render(request, 'service/aggregate-predictor.html', error)
-            
+
+        
         
         
         
