@@ -3,9 +3,9 @@ DEPARTMENT = [
 
     # FACULTY OF ARTS
     ('Faculty of Arts', (
-        ('Anthropology', 'Anthropology'),
+        ('Anthropology Arts', 'Anthropology Arts'),
         ('Arabic Language and Literature', 'Arabic Language and Literature'),
-        ('Archaeology', 'Archaeology'),
+        ('Archaeology Arts', 'Archaeology Arts'),
         ('Classics', 'Classics'),
         ('Communication and Language Arts', 'Communication and Language Arts'),
         ('English Language and Literature', 'English Language and Literature'),
@@ -27,8 +27,12 @@ DEPARTMENT = [
     #FACULTY OF AGRICULTURE
 
     ('Faculty of Agriculture', (
+        ('Agricultural Economics','Agricultural Economics'),
         ('Agricultural Extension', 'Agricultural Extension'),
         ('Agronomy', 'Agronomy'),
+        
+        ('Animal Science','Animal Science'),
+        ('Crop Protection and Environmental Biology','Crop Protection and Environmental Biology'),
     )
 
     ),
@@ -125,12 +129,12 @@ DEPARTMENT = [
 
     #FACULTY OF SCIENCE
     ('Faculty of Science', (
-        ('Anthropology', 'Anthropology'),
-        ('Archaeology', 'Archaeology'),
+        ('Anthropology Science', 'Anthropology Science'),
+        ('Archaeology Science', 'Archaeology Science'),
         ('Botany', 'Botany'),
         ('Chemistry', 'Chemistry'),
         ('Computer Science', 'Computer Science'),
-        ('Geography', 'Geography'),
+        ('Geography Science', 'Geography Science'),
         ('Geology', 'Geology'),
         ('Industrial Chemistry', 'Industrial Chemistry'),
         ('Mathematics', 'Mathematics'),
@@ -164,7 +168,7 @@ FACULTY = [
     ('Pharmacy', 'Pharmacy'),
     ('Renewable and Natural Resources', 'Renewable and Natural Resources'),
     ('Science', 'Science'),
-    ('Social Science', 'Socia;l Science'),
+    ('Social Science', 'Social Science'),
     ('Technology', 'Technology'),
     ('Veterinary Medicine', 'Veterianry Medicine'),
 
@@ -174,6 +178,7 @@ FACULTY = [
 
 SUBJECT = [
     ('Accounts', 'Accounts'),
+    ('Agricultural Science','Agricultural Science'),
     ('Arabic Studies', 'Arabic Studies'),
 
     ('Biology', 'Biology'),

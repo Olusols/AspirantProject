@@ -172,16 +172,16 @@ def predict_chance(utme,department):
 
     if utme_convert < next_prediction:
         if next_prediction - utme_convert >= 5:
-                   chance = 55
-        elif (next_prediction - utme_convert >=4  ):
                    chance = 60
-        elif (next_prediction - utme_convert >= 3 ):
+        elif (next_prediction - utme_convert >=4  ):
                    chance = 65
-        elif (next_prediction - utme_convert >= 2 ):
+        elif (next_prediction - utme_convert >= 3 ):
                    chance = 70
+        elif (next_prediction - utme_convert >= 2 ):
+                   chance = 75
             
         else:
-                   chance = 74
+                   chance = 79
     elif utme_convert > next_prediction:
                if  utme_convert - next_prediction <= 2:
                    chance = 82
@@ -195,7 +195,7 @@ def predict_chance(utme,department):
     else:
                chance = 78
     
-    calc = competitiveness*.1 + chance*.85 + standard*.05
+    calc = competitiveness*.02 + chance*.93 + standard*.05
     from math import ceil
     return ceil(calc)
             
