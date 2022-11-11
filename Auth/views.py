@@ -29,7 +29,7 @@ def register(request):
                 'error_message': error,
             }
             return render(request, "auth/register.html", context)
-   return render(request=request, template_name="auth/register.html")
+   return render(request=request, template_name="auth/coming-soon.html")
 
 
 def login(request):
