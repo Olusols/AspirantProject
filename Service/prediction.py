@@ -161,12 +161,7 @@ def predict_chance(utme,department):
     competitiveness = cutoff.competitiveness
     next_prediction = cutoff.next_prediction
     
-    
-        
-    
-    
-    
-    
+
    
     utme_convert = utme/4
 
@@ -199,4 +194,30 @@ def predict_chance(utme,department):
     from math import ceil
     return ceil(calc)
             
+
+def calculate_putme_score(utme, course_id):
+    from Service.models import Department
+    cutoff = Department.objects.get(id=course_id).cutoff
+    next_prediction = cutoff.next_prediction
+    if next_prediction < 55:
+        pred = 55
+    elif next_prediction >55 and next_prediction <= 60:
+        pred = 60
+    elif next_prediction > 60 and next_prediction <= 65:
+        pred = 65
+    elif next_prediction >65 and next_prediction <=70:
+        pred = 70
+    elif next_prediction >70 and next_prediction <= 75:
+        pred = 75
+    else:
+        pred = 80
+
+    putme_score = (8*(pred) - utme)/4
+    if putme_score < 60:
+        putme_score = 60
+    elif putme_score > 90:
+        putme_score = 90
+    from math import ceil
+    return ceil(putme_score)
+
 

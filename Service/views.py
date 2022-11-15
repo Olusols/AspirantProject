@@ -83,7 +83,7 @@ def chance_calculator(request):
         try:  
 
             from .data import PredictChanceData
-            from .prediction import predict_chance, return_status
+            from .prediction import predict_chance, return_status, calculate_putme_score
             department = Department.objects.get(id=course_id)
         
             chance = predict_chance(utme, course_id)
@@ -96,6 +96,8 @@ def chance_calculator(request):
         
             department = Department.objects.get(id=course_id)
             chance = predict_chance(utme, course_id)
+            putme_score = calculate_putme_score(utme, course_id)
+            
             status = return_status(chance)
 
                
@@ -126,6 +128,7 @@ def chance_calculator(request):
         
         context = {
             'chance': chance,
+            'putme_score': putme_score,
             'department': department,
             'similar': similar_course,
             'status': status,
