@@ -228,7 +228,7 @@ def subject_checker(request):
     context = {
         'department': get_department(),
     }
-    return render(request, 'service/subject-combo-checker.html', context)
+    return render(request, 'auth/coming-soon.html', context)
 
 
 

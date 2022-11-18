@@ -190,7 +190,7 @@ def predict_chance(utme,department):
     else:
                chance = 78
     
-    calc = competitiveness*.02 + chance*.93 + standard*.05
+    calc = (10 - competitiveness)*.1 + chance*.8 + standard*.1
     from math import ceil
     return ceil(calc)
             

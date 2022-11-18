@@ -3,17 +3,17 @@
 <html lang="en" class="light scroll-smooth" dir="ltr">
     <head>
         <meta charset="UTF-8" />
-        <title>Prediction Website| University of Ibadan | Admissions</title>
+        <title>UIAspirantCamp | Prediction Website | University of Ibadan Admissions</title>
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta content="Celerate Tech is an AI-based web development agency" name="description" />
-        <meta name="author" content="" />
-        <meta name="website" content="" />
-        <meta name="email" content="" />
+        <meta content="UIAspirantCamp bridges the missing gap between UI and UI aspirants." name="description" />
+        <meta name="author" content="UIASPIRANTCAMP" />
+        <meta name="website" content="UIASPIRANTCAMP" />
+        <meta name="email" content="uiaspirantcamp@gmail.com" />
         <meta name="version" content="1.2.0" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
         <!-- favicon -->
-        <link rel="shortcut icon" href={% static "images/favicon.ico" %}/>
+        <link rel="shortcut icon" href={% static "images/favicon/favicon.ico" %}/>
 
         <!-- Css -->
         <link href={% static "libs/tiny-slider/tiny-slider.css" %} rel="stylesheet">
@@ -41,9 +41,9 @@
         <nav id="topnav" class="defaultscroll is-sticky">
             <div class="container">
                 <!-- Logo container-->
-                <a class="logo" href="index.html">
-                    <img src="assets/images/logo-dark.png" class="inline-block dark:hidden" alt="">
-                    <img src="assets/images/logo-light.png" class="hidden dark:inline-block" alt="">
+                <a class="logo" href={% url "index" %}>
+                    <img src={% static "images/logo-dar.png" %} class="inline-block dark:hidden" alt="">
+                    <img src={% static "images/logo-ligh.png" %} class="hidden dark:inline-block" alt="">
                 </a>
 
                 <!-- End Logo container-->
@@ -75,7 +75,7 @@
                                 
                                 <li><a href={% url "aggregate-predictor" %} class="sub-menu-item">Agregate Predictor</a></li>
                                 <li><a href={% url "chance-calculator" %} class="sub-menu-item">Chance Calculator</a></li>
-                                <li><a href={% url "subject-checker" %} class="sub-menu-item">Sbject Combination Checker</a></li>
+                                <li><a href={% url "subject-checker" %} class="sub-menu-item">Subject Combination Checker</a></li>
                                 <li><a href={% url "cutoff-tracker" %} class="sub-menu-item">CutOff Tracker</a></li>
                                 
                                    
