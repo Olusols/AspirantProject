@@ -24,8 +24,8 @@ class Quote(models.Model):
 class FAQ(models.Model):
     
     
-    question = models.CharField(max_length=255)
-    answer = models.CharField(max_length=255)
+    question = models.CharField(max_length=2000)
+    answer = models.CharField(max_length=2000)
     
     def __str__(self):
         return self.question

@@ -29,7 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['127.0.0.1', 'https://uiaspirantcamp.azurewebsites.net', '*']
 #ALLOWED_HOSTS
 
-CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1', 'https://uiaspirantcamp.azurewebsites.net', '*']
+CSRF_TRUSTED_ORIGINS = ['https://*.127.0.0.1', 'https://uiaspirantcamp.azurewebsites.net']
 
 # Application definition
 
