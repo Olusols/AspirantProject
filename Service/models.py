@@ -93,6 +93,7 @@ class CutOff(models.Model):
     cutoff_2018 = models.FloatField(null=True, blank=True)
     cutoff_2019 = models.FloatField(null=True, blank=True)
     cutoff_2021 = models.FloatField(null=True, blank=True)
+    cutoff_2022 = models.FloatField(null=True, blank=True)
     
     # ADD NEW YEARS HERE
     
@@ -121,6 +122,7 @@ class CutOff(models.Model):
             '2018': self.cutoff_2018,
             '2019': self.cutoff_2019,
             '2021': self.cutoff_2021,
+            '2022': self.cutoff_2022
 
         }
         
@@ -166,10 +168,11 @@ class CutOff(models.Model):
                 y = int(key)
                 year.append(y)
       
-        this_year = 2022
+        this_year = 2023
         
         
         pred  =linear(year, cutoffs ,this_year)
+        
           
         self.next_prediction = np.mean([self.predicted, self.mean, pred])
          
@@ -187,7 +190,8 @@ class CutOff(models.Model):
             '2018': round(self.cutoff_2018,2),
             '2019': round(self.cutoff_2019,2),
             '2021': round(self.cutoff_2021, 2),
-            '2022 Prediction':round( self.next_prediction, 2),
+            '2022/2023': round(self.cutoff_2022, 2),
+            '2023 Prediction':round( self.next_prediction, 2),
 
         }
 

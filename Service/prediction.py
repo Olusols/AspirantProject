@@ -72,6 +72,7 @@ def linear(x, y, utme):
     
        linear_model = stats.linregress(x, y)
        result = linear_model.slope * utme + linear_model.intercept
+       
     except:
         return ValidationError('You have to have more than one data point in your list')
     
@@ -129,8 +130,7 @@ def predict_aggregate(utme, number, course):
        mean_data = mean([data_attempts, all_data, data_2018])
        
     aggregate = utme/8 + mean_data/2
-    print(aggregate)
-    
+       
     return aggregate
     
     

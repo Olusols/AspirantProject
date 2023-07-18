@@ -184,6 +184,7 @@ def cutoff_tracker(request):
             'faq': get_faq(),
             'fact': get_fact(),
             }
+        
 
         return render(request, 'service/cutoff-tracker-result.html', context)
     context = {
